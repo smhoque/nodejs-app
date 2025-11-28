@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const password = encodeURIComponent(process.env.MONGO_PASSWORD.trim());
-const connectionString = `mongodb+srv://eriponctg_db_user:zRFAIyhh58YiiJmT@dev-cluster.y1g9ewr.mongodb.net/?appName=dev-cluster`;
+const connectionString = `mongodb+srv://eriponctg_db_user:${password}@dev-cluster.y1g9ewr.mongodb.net/?appName=dev-cluster`;
 
 const client = new MongoClient(connectionString);
 
