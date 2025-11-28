@@ -62,6 +62,11 @@ const Mutation = new GraphQLObjectType({
     }
 })
 
+app.get("/", (req, res) => {
+  res.send("✅ Server is running! Go to /graphql or /rest/getAllUsers");
+});
+
+
 const schema = new GraphQLSchema({query: RootQuery, mutation: Mutation})
 app.use("/graphql", graphqlHTTP({
     schema,
